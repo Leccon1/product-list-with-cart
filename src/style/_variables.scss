@@ -1,23 +1,21 @@
 // Цвета
-$color-blue: hsl(195, 88%, 59%);
-$color-grey: hsl(225, 22%, 45%);
-$color-success: hsl(140, 55%, 35%);
-$color-danger: hsl(0, 75%, 40%);
-$color-warning: hsl(45, 100%, 50%);
-$color-info: hsl(180, 75%, 40%);
-$color-light: hsl(0, 0%, 97%);
-$color-dark: hsl(0, 0%, 13%);
+$color-red: hsl(14, 86%, 42%);
+$color-green: hsl(159, 69%, 38%);
+$color-rose-50: hsl(20, 50%, 98%);
+$color-rose-100: hsl(13, 31%, 94%);
+$color-rose-300: hsl(14, 25%, 72%);
+$color-rose-400: hsl(7, 20%, 60%);
+$color-rose-500: hsl(12, 20%, 44%);
+$color-rose-900: hsl(14, 65%, 9%);
 $color-white: hsl(0, 0%, 100%);
 $color-black: hsl(0, 0%, 0%);
 
 // Шрифты
-$font-family-base: 'Inter', sans-serif;
-$font-size-base: 1rem;
-$font-size-sm: 0.875rem;
-$font-size-lg: 1.25rem;
+$font-family-base: 'Red Hat Text', sans-serif;
+$font-size-base: rem(16);
 
 $font-weight-normal: 400;
-$font-weight-medium: 500;
+$font-weight-semiBold: 600;
 $font-weight-bold: 700;
 
 // Отступы
@@ -28,12 +26,12 @@ $spacing-lg: 1.5rem;
 $spacing-xl: 2rem;
 
 // Радиусы и бордеры
-$border-radius-sm: 4px;
-$border-radius-md: 8px;
-$border-radius-lg: 16px;
+$border-radius-sm: rem(12);
+$border-radius-md: rem(18);
+$border-radius-lg: rem(32);
 
-$border-width: 1px;
-$border-color: #dee2e6;
+$border-width: rem(1);
+$border-color: $color-red;
 
 // Тени
 $box-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -53,7 +51,7 @@ $transition-fast: 0.2s ease-in-out;
 $transition-normal: 0.3s ease-in-out;
 
 // Контейнер
-$container-max-width: 1200px;
+$container-max-width: rem(1200);
 
 // Z-индексы
 $z-index-header: 1000;
