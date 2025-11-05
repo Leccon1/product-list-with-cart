@@ -1,5 +1,5 @@
-@use '../variables' as *;
-@use '../helpers/' as *;
+@use '@styles/variables' as *;
+@use '@styles/helpers' as *;
 
 html {
 	font-size: 62.5%; /* 1rem = 10px */
