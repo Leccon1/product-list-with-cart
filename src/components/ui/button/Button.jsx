@@ -3,6 +3,8 @@ import { useState, useEffect, useRef } from 'react'
 import IconDecrement from '../icons/IconDecrementQuantity'
 import IconIncrement from '../icons/IconIncrementQuantity'
 
+import style from './Button.module.scss'
+
 const Button = ({
   children,
   variant = 'product-card',
@@ -35,17 +37,19 @@ const Button = ({
   return (
     <div ref={buttonRef}>
       <button
-        className={`button button--${variant} ${isClicked ? 'button--active' : ''}`}
+        className={`${style.button} ${style[`button--${variant}`]} ${isClicked ? style['button--active'] : ''}`}
         onClick={handleClick}
         {...props}
       >
-        <div className={`button__content ${isClicked ? 'button__active-content' : ''}`}>
+        <div
+          className={`${style.button__content} ${isClicked ? style['button__active - content'] : ''}`}
+        >
           {isClicked ? (
             showCounter ? (
               // счетчик для варианта product-card
               <>
                 <button
-                  className="button__decrement button__calculate"
+                  className={`${style.button__decrement} ${style.button__calculate}`}
                   onClick={(e) => {
                     e.stopPropagation()
                     setProductValue((prev) => Math.max(1, prev - 1))
@@ -53,9 +57,9 @@ const Button = ({
                 >
                   <IconDecrement />
                 </button>
-                <span className="button__calculate-counter">{productValue}</span>
+                <span className={style['button__calculate-counter']}>{productValue}</span>
                 <button
-                  className="button__increment button__calculate"
+                  className={`${style.button__increment} ${style.button__calculate}`}
                   onClick={(e) => {
                     e.stopPropagation()
                     setProductValue((prev) => prev + 1)
