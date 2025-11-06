@@ -3,7 +3,13 @@ import { useState, useEffect, useRef } from 'react'
 import IconDecrement from '../icons/IconDecrementQuantity'
 import IconIncrement from '../icons/IconIncrementQuantity'
 
-const Button = ({ children, variant = 'product-card', ...props }) => {
+const Button = ({
+  children,
+  variant = 'product-card',
+  activeContent,
+  showCounter = true,
+  ...props
+}) => {
   const [productValue, setProductValue] = useState(1)
   const [isClicked, setIsClicked] = useState(false)
   const buttonRef = useRef(null)
@@ -35,31 +41,37 @@ const Button = ({ children, variant = 'product-card', ...props }) => {
       >
         <div className={`button__content ${isClicked ? 'button__active-content' : ''}`}>
           {isClicked ? (
-            <>
-              <button
-                className="button__decrement button__calculate"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  setProductValue((prev) => Math.max(1, prev - 1))
-                }}
-              >
-                <IconDecrement />
-              </button>
-              <span className="button__calculate-counter">{productValue}</span>
-              <button
-                className="button__increment button__calculate"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  setProductValue((prev) => prev + 1)
-                }}
-              >
-                <IconIncrement />
-              </button>
-            </>
+            showCounter ? (
+              // счетчик для варианта product-card
+              <>
+                <button
+                  className="button__decrement button__calculate"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setProductValue((prev) => Math.max(1, prev - 1))
+                  }}
+                >
+                  <IconDecrement />
+                </button>
+                <span className="button__calculate-counter">{productValue}</span>
+                <button
+                  className="button__increment button__calculate"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setProductValue((prev) => prev + 1)
+                  }}
+                >
+                  <IconIncrement />
+                </button>
+              </>
+            ) : (
+              activeContent || children // если не передан актив контент, то будет чилдрен
+            )
           ) : (
+            // Неактивное состояние
             children
           )}
-        </div>{' '}
+        </div>
       </button>
     </div>
   )
