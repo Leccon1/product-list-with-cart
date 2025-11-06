@@ -16,20 +16,10 @@
 
   transition: all $transition-fast;
 
-  &:disabled {
-    cursor: default;
-  }
-
   &__content {
     display: flex;
     align-items: center;
     gap: rem(8);
-
-    &.button__active-content {
-      width: 80%;
-      justify-content: space-between;
-      gap: 0;
-    }
   }
 
   &--product-cart {
@@ -41,6 +31,23 @@
     &.button--active {
       background-color: $color-red;
       color: $color-white;
+    }
+
+    .button__active-content {
+      width: 80%;
+      justify-content: space-between;
+      gap: 0;
+    }
+  }
+
+  &--other {
+    background-color: $color-red;
+    color: $color-white;
+    border: none;
+    width: 100%;
+
+    &:hover {
+      background-color: hsl(14, 86%, 25%);
     }
   }
 
