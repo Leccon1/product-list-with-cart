@@ -1,0 +1,75 @@
+@use '@styles/variables' as *;
+@use '@styles/helpers' as *;
+.button {
+  position: absolute;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  left: 50%;
+
+  height: rem(50);
+  border-radius: $border-radius-lg;
+  font-size: rem(16);
+  font-weight: $font-weight-semiBold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all $transition-fast;
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: rem(8);
+
+    &.button__active-content {
+      width: 80%;
+      justify-content: space-between;
+      gap: 0;
+    }
+  }
+
+  &--product-cart {
+    background-color: $color-white;
+    color: $color-black;
+    width: 65%;
+    border: rem(1) solid $color-black;
+
+    &.button--active {
+      background-color: $color-red;
+      color: $color-white;
+    }
+  }
+
+  &__calculate {
+    @include hover-zone(-8px);
+
+    height: rem(24);
+    width: rem(24);
+
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    padding: rem(8);
+    border-radius: 50%;
+    border: $border-width solid $color-white;
+
+    transition: background-color $transition-fast;
+
+    & img {
+      transform: scale(1.7);
+    }
+
+    &:hover {
+      background-color: $color-white;
+
+      & img {
+        filter: invert(100%) hue-rotate(14deg) saturate(86%) brightness(42%);
+      }
+    }
+  }
+}
