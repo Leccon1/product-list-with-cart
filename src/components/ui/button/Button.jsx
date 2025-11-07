@@ -35,14 +35,16 @@ const Button = ({
   }
 
   return (
+    // будет пустой div, так надо)
     <div ref={buttonRef}>
       <button
         className={`${style.button} ${style[`button--${variant}`]} ${isClicked ? style['button--active'] : ''}`}
         onClick={handleClick}
         {...props}
       >
+        {/* если кнопка нажата, то ставит стили */}
         <div
-          className={`${style.button__content} ${isClicked ? style['button__active - content'] : ''}`}
+          className={`${style.button__content} ${isClicked ? style['button__active-content'] : ''}`}
         >
           {isClicked ? (
             showCounter ? (
