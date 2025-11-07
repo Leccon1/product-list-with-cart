@@ -23,9 +23,6 @@
     }
   }
 
-  @include mobile {
-  }
-
   &__content {
     display: flex;
     align-items: center;
@@ -37,6 +34,10 @@
     color: $color-black;
     width: 65%;
     border: rem(1) solid $color-black;
+
+    @include mobile {
+      width: 55%;
+    }
 
     &.button--active {
       background-color: $color-red;
