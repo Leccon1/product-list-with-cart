@@ -21,48 +21,45 @@ const Button = ({
   }
 
   return (
-    <button
+    <div
       className={`${style.button} ${style[`button--${variant}`]} ${isClicked ? style['button--active'] : ''}`}
       onClick={handleClick}
       {...props}
     >
-      {/* если кнопка нажата, то ставит стили */}
       <div
         className={`${style.button__content} ${isClicked ? style['button__active-content'] : ''}`}
       >
-        {isClicked ? (
-          showCounter ? (
-            // счетчик для варианта product-card
-            <>
-              <button
-                className={`${style.button__decrement} ${style.button__calculate}`}
-                onClick={(e) => {
-                  e.stopPropagation()
-                  setProductValue((prev) => Math.max(1, prev - 1))
-                }}
-              >
-                <IconDecrement />
-              </button>
-              <span className={style['button__calculate-counter']}>{productValue}</span>
-              <button
-                className={`${style.button__increment} ${style.button__calculate}`}
-                onClick={(e) => {
-                  e.stopPropagation()
-                  setProductValue((prev) => prev + 1)
-                }}
-              >
-                <IconIncrement />
-              </button>
-            </>
-          ) : (
-            activeContent || children // если не передан актив контент, то будет чилдрен
-          )
+        {isClicked && showCounter ? (
+          <>
+            <button
+              type="button"
+              className={`${style.button__decrement} ${style.button__calculate}`}
+              onClick={(e) => {
+                e.stopPropagation()
+                setProductValue((prev) => Math.max(1, prev - 1))
+              }}
+            >
+              <IconDecrement />
+            </button>
+            <span className={style['button__calculate-counter']}>{productValue}</span>
+            <button
+              type="button"
+              className={`${style.button__increment} ${style.button__calculate}`}
+              onClick={(e) => {
+                e.stopPropagation()
+                setProductValue((prev) => prev + 1)
+              }}
+            >
+              <IconIncrement />
+            </button>
+          </>
+        ) : isClicked ? (
+          activeContent || children
         ) : (
-          // Неактивное состояние
           children
         )}
       </div>
-    </button>
+    </div>
   )
 }
 
