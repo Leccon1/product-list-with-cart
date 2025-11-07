@@ -1,0 +1,31 @@
+@use '@styles/variables' as *;
+@use '@styles/helpers' as *;
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: fluid(32, 38);
+
+  &__media {
+    position: relative;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: rem(4);
+
+    font-size: fluid(14, 16);
+  }
+  &__category {
+    color: $color-rose-400;
+    font-size: fluid(12, 14);
+  }
+  &__name {
+    font-size: inherit;
+  }
+  &__price {
+    color: $color-red;
+    font-size: inherit;
+    font-weight: $font-weight-semiBold;
+  }
+}
