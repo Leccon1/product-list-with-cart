@@ -8,13 +8,23 @@
 
   height: rem(50);
   border-radius: $border-radius-lg;
-  font-size: rem(16);
+  font-size: fluid(14, 16, 768, 1920);
   font-weight: $font-weight-semiBold;
   display: flex;
   justify-content: center;
   align-items: center;
 
   transition: all $transition-fast;
+
+  &:not(.button--active) {
+    @include hover {
+      color: $color-red;
+      border-color: $color-red;
+    }
+  }
+
+  @include mobile {
+  }
 
   &__content {
     display: flex;
