@@ -1,23 +1,43 @@
 /* eslint-disable import/no-unresolved */
 import DessertCard from '@components/ui/dessertCard/DessertCard'
 import dessertsData from '@data/dessert'
+import { useState } from 'react'
 
 import DessertCart from '../ui/dessertCart/DessertCart'
 
 import style from './DessertListPage.module.scss'
 
 const DessertListPage = () => {
+  const [cartItems, setCartItems] = useState([])
+
+  const addToCart = (dessert) => {
+    setCartItems((prev) => {
+      const existingItem = prev.find((item) => item.name === dessert.name)
+
+      if (existingItem) {
+        return prev.filter((item) => item.name !== dessert.name)
+      } else {
+        return [...prev, { ...dessert, quantity: 1 }]
+      }
+    })
+  }
+
   return (
     <div className={style.dessertsListPage}>
       <div className={style.dessertMain}>
         <h1 className={style.dessertTitle}>Desserts</h1>
         <div className={style.dessertsGrid}>
           {dessertsData.map((dessert) => (
-            <DessertCard key={dessert.name} product={dessert} />
+            <DessertCard
+              key={dessert.name}
+              product={dessert}
+              onAddToCart={addToCart}
+              cartItems={cartItems}
+            />
           ))}
         </div>
       </div>
-      <DessertCart />
+      <DessertCart cartItems={cartItems} />
     </div>
   )
 }

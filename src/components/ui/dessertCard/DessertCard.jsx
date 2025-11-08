@@ -1,15 +1,17 @@
-import { useState } from 'react'
-
 import Button from '../button/Button'
 import IconCart from '../icons/IconCart'
 
 import style from './DessertCard.module.scss'
 
-const DessertCardComponent = ({ product: dessert }) => {
-  const [isButtonActive, setIsButtonActive] = useState(false)
+const DessertCardComponent = ({ product: dessert, onAddToCart, cartItems }) => {
+  const isButtonActive = cartItems.some((item) => item.name === dessert.name)
 
   if (!dessert || !dessert.image) {
     return <div className={style.dessertCard}>Loading...</div>
+  }
+
+  const handleButtonClick = () => {
+    onAddToCart(dessert)
   }
 
   return (
@@ -22,7 +24,7 @@ const DessertCardComponent = ({ product: dessert }) => {
           <source srcSet={dessert.image.tablet} alt={dessert.name} media="(max-width: 1023px)" />
           <img src={dessert.image.desktop} alt={dessert.name} />
         </picture>
-        <Button variant="product-cart" onStateChange={setIsButtonActive}>
+        <Button variant="product-cart" isActive={isButtonActive} onClick={handleButtonClick}>
           <IconCart />
           Add to cart
         </Button>
