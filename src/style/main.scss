@@ -1,8 +1,11 @@
-@use './variables';
+@use '@styles/variables';
 
 @use './base/base';
 @use './base/fonts';
 @use './base/normalized';
 @use './base/utilites';
 
-// далее block, components, pages и так далее
+@use '../components/ui/desertCard/DesertCard.module';
+@use '../components/ui/button/Button.module';
+
+@use '../components/pages/DesertListPage.module';

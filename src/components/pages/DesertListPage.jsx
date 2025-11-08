@@ -1,12 +1,12 @@
 /* eslint-disable import/no-unresolved */
-import ProductCard from '@components/ui/productCard/ProductCard'
-import productsData from '@data/products'
+import ProductCard from '@components/ui/desertCard/DesertCard'
+import productsData from '@data/desert'
 
 import DesertCart from '../ui/desertCart/DesertCart'
 
-import style from './ProductListPage.module.scss'
+import style from './DesertListPage.module.scss'
 
-const ProductListPage = () => {
+const DesertListPage = () => {
   return (
     <div className={style.desertsListPage}>
       <div className={style.desertMain}>
@@ -22,4 +22,4 @@ const ProductListPage = () => {
   )
 }
 
-export default ProductListPage
+export default DesertListPage

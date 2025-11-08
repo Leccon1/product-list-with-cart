@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Button from '../button/Button'
 import IconCart from '../icons/IconCart'
 
-import style from './ProductCard.module.scss'
+import style from './DesertCard.module.scss'
 
 const ProductCardComponent = ({ product }) => {
   const [isButtonActive, setIsButtonActive] = useState(false)
