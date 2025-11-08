@@ -1,8 +1,24 @@
 @use '@styles/variables' as *;
 @use '@styles/helpers' as *;
 
-.deserts-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(250px, 250px));
-  gap: rem(32) rem(24);
+.desertsListPage {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-gap-xl;
+
+  .desertMain {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-gap-xl;
+
+    .desertTitle {
+      font-size: rem(40);
+    }
+  }
+
+  .desertsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 250px));
+    gap: $spacing-gap-xl rem(24);
+  }
 }

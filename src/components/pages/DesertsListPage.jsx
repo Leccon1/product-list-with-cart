@@ -2,15 +2,22 @@
 import ProductCard from '@components/ui/productCard/ProductCard'
 import productsData from '@data/products'
 
+import DesertCart from '../ui/desertCart/DesertCart'
+
+import style from './ProductListPage.module.scss'
+
 const ProductListPage = () => {
   return (
-    <div className="deserts-list-pages">
-      <h1>Desserts</h1>
-      <div className="deserts-grid">
-        {productsData.map((product) => (
-          <ProductCard key={product.name} product={product} />
-        ))}
+    <div className={style.desertsListPage}>
+      <div className={style.desertMain}>
+        <h1 className={style.desertTitle}>Desserts</h1>
+        <div className={style.desertsGrid}>
+          {productsData.map((product) => (
+            <ProductCard key={product.name} product={product} />
+          ))}
+        </div>
       </div>
+      <DesertCart />
     </div>
   )
 }
