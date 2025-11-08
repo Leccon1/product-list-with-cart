@@ -4,8 +4,9 @@ import productsData from '@data/products'
 
 const ProductListPage = () => {
   return (
-    <div className="product-list-pages">
-      <div className="product-grid">
+    <div className="deserts-list-pages">
+      <h1>Desserts</h1>
+      <div className="deserts-grid">
         {productsData.map((product) => (
           <ProductCard key={product.name} product={product} />
         ))}
