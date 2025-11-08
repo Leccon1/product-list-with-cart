@@ -4,6 +4,7 @@
 .dessertsListPage {
   display: flex;
   flex-direction: row;
+  align-items: baseline;
   gap: $spacing-gap-xl;
 
   .dessertMain {
