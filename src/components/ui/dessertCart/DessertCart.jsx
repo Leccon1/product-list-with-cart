@@ -2,7 +2,7 @@
 import emptyCartIconSvg from '@images/illustration-empty-cart.svg'
 
 import style from './DessertCart.module.scss'
-
+import DessertCartItem from './dessertCartItem/DessertCartItem'
 const DessertCart = ({ cartItems = [] }) => {
   const countDesserts = cartItems.length
 
@@ -10,18 +10,12 @@ const DessertCart = ({ cartItems = [] }) => {
     <div className={style.dessertCart}>
       <h2 className={style.dessertCartTitle}>Your Cart ({countDesserts})</h2>
       {cartItems.length === 0 ? (
-        <>
+        <div className={style.dessertCartEmptyContainer}>
           <img src={emptyCartIconSvg} alt="Empty cart" />
           <p>Your added items will appear here</p>
-        </>
-      ) : (
-        <div className={style.cartItems}>
-          {cartItems.map((item, index) => (
-            <div key={index} className={style.cartItem}>
-              <span>{item.name}</span>
-            </div>
-          ))}
         </div>
+      ) : (
+        <DessertCartItem cartItems={cartItems} />
       )}
     </div>
   )
