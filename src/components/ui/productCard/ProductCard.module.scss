@@ -7,7 +7,20 @@
   gap: fluid(32, 38);
 
   &__media {
+    $border-radius: rem(12);
+
     position: relative;
+    border: $border-width solid transparent;
+    border-radius: $border-radius;
+    transition: border-color $transition-normal;
+
+    &--active {
+      border-color: $color-red;
+    }
+
+    picture img {
+      border-radius: $border-radius;
+    }
   }
   &__info {
     display: flex;
