@@ -1,0 +1,30 @@
+@use '@styles/variables' as *;
+@use '@styles/helpers' as *;
+
+.dessertCart {
+  background-color: $color-white;
+  color: $color-rose-500;
+
+  width: 100%;
+  max-width: rem(385);
+  min-height: rem(300);
+
+  font-weight: $font-weight-semiBold;
+  border-radius: $border-radius-sm;
+  padding: rem(24);
+
+  display: flex;
+  flex-direction: column;
+  gap: rem(38);
+
+  .dessertCartTitle {
+    color: $color-red;
+  }
+
+  .dessertCartEmptyContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
