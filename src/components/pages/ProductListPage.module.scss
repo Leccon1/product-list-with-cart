@@ -1,7 +1,7 @@
 @use '@styles/variables' as *;
 @use '@styles/helpers' as *;
 
-.product-list {
+.product-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(250px, 250px));
   gap: rem(32) rem(24);
