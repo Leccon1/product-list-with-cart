@@ -1,4 +1,4 @@
-const deserts = [
+const desserts = [
   {
     image: {
       thumbnail: new URL('../assets/images/image-waffle-thumbnail.jpg', import.meta.url).href,
@@ -100,4 +100,4 @@ const deserts = [
   },
 ]
 
-export default deserts
+export default desserts

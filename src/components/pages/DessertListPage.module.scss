@@ -1,22 +1,22 @@
 @use '@styles/variables' as *;
 @use '@styles/helpers' as *;
 
-.desertsListPage {
+.dessertsListPage {
   display: flex;
   flex-direction: row;
   gap: $spacing-gap-xl;
 
-  .desertMain {
+  .dessertMain {
     display: flex;
     flex-direction: column;
     gap: $spacing-gap-xl;
 
-    .desertTitle {
+    .dessertTitle {
       font-size: rem(40);
     }
   }
 
-  .desertsGrid {
+  .dessertsGrid {
     display: grid;
     grid-template-columns: repeat(3, minmax(250px, 250px));
     gap: $spacing-gap-xl rem(24);

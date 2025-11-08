@@ -1,0 +1,39 @@
+import { useState } from 'react'
+
+import Button from '../button/Button'
+import IconCart from '../icons/IconCart'
+
+import style from './DessertCard.module.scss'
+
+const DessertCardComponent = ({ product: dessert }) => {
+  const [isButtonActive, setIsButtonActive] = useState(false)
+
+  if (!dessert || !dessert.image) {
+    return <div className={style.dessertCard}>Loading...</div>
+  }
+
+  return (
+    <div className={style.dessertCard}>
+      <div
+        className={`${style.dessertCardMedia} ${isButtonActive ? style.dessertCardMediaActive : ''}`}
+      >
+        <picture>
+          <source srcSet={dessert.image.mobile} alt={dessert.name} media="(max-width: 767px)" />
+          <source srcSet={dessert.image.tablet} alt={dessert.name} media="(max-width: 1023px)" />
+          <img src={dessert.image.desktop} alt={dessert.name} />
+        </picture>
+        <Button variant="product-cart" onStateChange={setIsButtonActive}>
+          <IconCart />
+          Add to cart
+        </Button>
+      </div>
+      <div className={style.dessertCardInfo}>
+        <p className={style.dessertCardCategory}>{dessert.category}</p>
+        <h3 className={style.dessertCardName}>{dessert.name}</h3>
+        <p className={style.dessertCardPrice}>${dessert.price}</p>
+      </div>
+    </div>
+  )
+}
+
+export default DessertCardComponent
