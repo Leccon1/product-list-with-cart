@@ -10,7 +10,7 @@
     $border-radius: rem(12);
 
     position: relative;
-    border: $border-width solid transparent;
+    border: rem(2) solid transparent;
     border-radius: $border-radius;
     transition: border-color $transition-normal;
 
