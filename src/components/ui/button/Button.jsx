@@ -10,13 +10,16 @@ const Button = ({
   variant = 'product-card',
   activeContent,
   showCounter = true,
+  onStateChange,
   ...props
 }) => {
   const [productValue, setProductValue] = useState(1)
   const [isClicked, setIsClicked] = useState(false)
 
   const handleClick = (e) => {
+    const newState = !isClicked
     setIsClicked(!isClicked)
+    onStateChange?.(newState)
     props.onClick?.(e)
   }
 

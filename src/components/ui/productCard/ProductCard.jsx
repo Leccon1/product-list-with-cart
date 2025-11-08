@@ -1,19 +1,24 @@
+import { useState } from 'react'
+
 import Button from '../button/Button'
 import IconCart from '../icons/IconCart'
 
 const ProductCard = ({ product }) => {
+  const [isButtonActive, setIsButtonActive] = useState(false)
+
   if (!product || !product.image) {
     return <div className="product-card">Loading...</div>
   }
+
   return (
     <div className="product-card">
-      <div className="product-card__media">
+      <div className={`product-card__media ${isButtonActive ? 'product-card__media--active' : ''}`}>
         <picture>
           <source srcSet={product.image.mobile} alt={product.name} media="(max-width: 767px)" />
           <source srcSet={product.image.tablet} alt={product.name} media="(max-width: 1023px)" />
           <img src={product.image.desktop} alt={product.name} />
         </picture>
-        <Button variant="product-cart">
+        <Button variant="product-cart" onStateChange={setIsButtonActive}>
           <IconCart />
           Add to cart
         </Button>
