@@ -24,7 +24,7 @@ const DessertCardComponent = ({ product: dessert, onAddToCart, cartItems }) => {
           <source srcSet={dessert.image.tablet} alt={dessert.name} media="(max-width: 1023px)" />
           <img src={dessert.image.desktop} alt={dessert.name} />
         </picture>
-        <Button variant="product-cart" isActive={isButtonActive} onClick={handleButtonClick}>
+        <Button variant="product-cart" active={isButtonActive} onClick={handleButtonClick}>
           <IconCart />
           Add to cart
         </Button>
