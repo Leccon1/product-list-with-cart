@@ -1,12 +1,12 @@
 @use '@styles/variables' as *;
 @use '@styles/helpers' as *;
 
-.product-card {
+.productCard {
   display: flex;
   flex-direction: column;
   gap: fluid(32, 38);
 
-  &__media {
+  .productCardMedia {
     $border-radius: rem(12);
 
     position: relative;
@@ -14,7 +14,7 @@
     border-radius: $border-radius;
     transition: border-color $transition-normal;
 
-    &--active {
+    &.productCardMediaActive {
       border-color: $color-red;
     }
 
@@ -22,21 +22,21 @@
       border-radius: $border-radius;
     }
   }
-  &__info {
+  .productCardInfo {
     display: flex;
     flex-direction: column;
     gap: rem(4);
 
     font-size: fluid(14, 16);
   }
-  &__category {
+  .productCardCategory {
     color: $color-rose-400;
     font-size: fluid(12, 14);
   }
-  &__name {
+  .productCardName {
     font-size: inherit;
   }
-  &__price {
+  .productCardPrice {
     color: $color-red;
     font-size: inherit;
     font-weight: $font-weight-semiBold;
