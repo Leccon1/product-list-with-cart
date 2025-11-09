@@ -2,15 +2,15 @@ import style from './DessertCartItem.module.scss'
 
 const DessertCartItem = ({ cartItems = [] }) => {
   return (
-    <div className={style.cartItems}>
+    <ul className={style.cartItems}>
       {cartItems.map((item, index) => (
-        <div key={index} className={style.cartItem}>
+        <li key={index} className={style.cartItem}>
           <span>{item.name}</span>
           <span>${item.price}</span>
           <span>Quantity: {item.quantity}</span>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   )
 }
 
