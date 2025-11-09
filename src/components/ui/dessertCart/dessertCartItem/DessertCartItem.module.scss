@@ -1,0 +1,53 @@
+@use '@styles/variables' as *;
+@use '@styles/helpers' as *;
+
+.cartItems {
+  .cartItem {
+    position: relative;
+    padding: rem(24) 0;
+    display: flex;
+    justify-content: space-between;
+
+    &:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: $border-width;
+      background-color: $color-rose-100;
+    }
+
+    // Отступы
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    .cartItemContent {
+      display: flex;
+      flex-direction: column;
+      gap: rem(8);
+
+      .cartItemName {
+        color: $color-rose-900;
+      }
+
+      .cartItemInfo {
+        display: flex;
+        flex-direction: row;
+        gap: rem(12);
+
+        .cartItemQuantity {
+          color: $color-red;
+          font-weight: $font-weight-semiBold;
+        }
+        .cartItemBasePrice {
+          font-weight: $font-weight-normal;
+        }
+      }
+    }
+  }
+}
