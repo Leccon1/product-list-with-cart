@@ -12,11 +12,11 @@ const DessertCartItem = ({ cartItems = [] }) => {
         return (
           <li key={index} className={style.cartItem}>
             <div className={style.cartItemContent}>
-              <p>{item.name}</p>
+              <p className={style.cartItemName}>{item.name}</p>
               <div className={style.cartItemInfo}>
-                <span className={style.cartItemInfoQuantity}>{item.quantity}х</span>
-                <span className={style.cartItemInfoBasePrice}>@ ${item.price}</span>
-                <span className={style.cartItemInfoTotalPrice}>${itemTotal.toFixed(2)}</span>
+                <span className={style.cartItemQuantity}>{item.quantity}х</span>
+                <span className={style.cartItemBasePrice}>@ ${item.price}</span>
+                <span className={style.cartItemTotalPrice}>${itemTotal.toFixed(2)}</span>
               </div>
             </div>
             <button type="button" className={style.cartItemDelete}>
