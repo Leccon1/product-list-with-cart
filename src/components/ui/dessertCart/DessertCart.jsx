@@ -20,7 +20,11 @@ const DessertCart = ({ cartItems = [] }) => {
           <p>Your added items will appear here</p>
         </div>
       ) : (
-        <DessertCartItem cartItems={cartItems} />
+        <ul className={style.cartItems}>
+          {cartItems.map((item) => (
+            <DessertCartItem key={item.name} item={item} />
+          ))}
+        </ul>
       )}
       {cartItems.length > 0 && (
         <div className={style.dessertCartTotal}>
