@@ -3,6 +3,7 @@ import emptyCartIconSvg from '@images/illustration-empty-cart.svg'
 
 import style from './DessertCart.module.scss'
 import DessertCartItem from './dessertCartItem/DessertCartItem'
+
 const DessertCart = ({ cartItems = [] }) => {
   const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0)
 
@@ -25,7 +26,7 @@ const DessertCart = ({ cartItems = [] }) => {
         <div className={style.dessertCartTotal}>
           <span className={style.dessertCartTotalText}>Order Total</span>
           <span className={style.dessertCartTotalPrice}>
-            ${cartItems.reduce((acc, item) => acc + item.price, 0)}
+            ${cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2)}
           </span>
         </div>
       )}
