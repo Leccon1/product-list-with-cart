@@ -37,5 +37,16 @@
 
   .dessertCartTotal {
     flex-shrink: 0;
+    color: $color-rose-500;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .dessertCartTotalPrice {
+      color: $color-rose-900;
+      font-size: rem(24);
+      font-weight: $font-weight-bold;
+    }
   }
 }
