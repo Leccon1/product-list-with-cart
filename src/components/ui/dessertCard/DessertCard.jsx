@@ -3,7 +3,13 @@ import IconCart from '../icons/IconCart'
 
 import style from './DessertCard.module.scss'
 
-const DessertCardComponent = ({ product: dessert, onAddToCart, cartItems }) => {
+const DessertCardComponent = ({
+  product: dessert,
+  onAddToCart,
+  cartItems,
+  onUpdateQuantity,
+  onUpdateTotalQuantity,
+}) => {
   const isButtonActive = cartItems.some((item) => item.name === dessert.name)
 
   if (!dessert || !dessert.image) {
@@ -24,7 +30,15 @@ const DessertCardComponent = ({ product: dessert, onAddToCart, cartItems }) => {
           <source srcSet={dessert.image.tablet} alt={dessert.name} media="(max-width: 1023px)" />
           <img src={dessert.image.desktop} alt={dessert.name} />
         </picture>
-        <Button variant="product-cart" active={isButtonActive} onClick={handleButtonClick}>
+        <Button
+          variant="product-cart"
+          active={isButtonActive}
+          onClick={handleButtonClick}
+          onUpdateQuantity={onUpdateQuantity}
+          onUpdateTotalQuantity={onUpdateTotalQuantity}
+          cartItems={cartItems}
+          dessert={dessert}
+        >
           <IconCart />
           Add to cart
         </Button>

@@ -22,6 +22,14 @@ const DessertListPage = () => {
     })
   }
 
+  const updateQuantity = (dessertName, newQuantity) => {
+    setCartItems((prev) =>
+      prev.map((item) => (item.name === dessertName ? { ...item, quantity: newQuantity } : item))
+    )
+  }
+  const updateTotalQuantity = (newTotal) => {
+    setCartItems((prev) => prev.map((item) => ({ ...item, quantity: newTotal })))
+  }
   return (
     <div className={style.dessertsListPage}>
       <div className={style.dessertMain}>
@@ -33,6 +41,8 @@ const DessertListPage = () => {
               product={dessert}
               onAddToCart={addToCart}
               cartItems={cartItems}
+              onUpdateQuantity={updateQuantity}
+              onUpdateTotalQuantity={updateTotalQuantity}
             />
           ))}
         </div>

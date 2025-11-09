@@ -6,6 +6,8 @@ const DessertCartItem = ({ cartItems = [] }) => {
       {cartItems.map((item, index) => (
         <div key={index} className={style.cartItem}>
           <span>{item.name}</span>
+          <span>${item.price}</span>
+          <span>Quantity: {item.quantity}</span>
         </div>
       ))}
     </div>

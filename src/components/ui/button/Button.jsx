@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import IconDecrement from '../icons/IconDecrementQuantity'
 import IconIncrement from '../icons/IconIncrementQuantity'
 
@@ -12,9 +10,14 @@ const Button = ({
   active = false,
   showCounter = true,
   onStateChange,
+  onUpdateQuantity = { onUpdateQuantity },
+  onUpdateTotalQuantity = { onUpdateTotalQuantity },
+  cartItems,
+  dessert = { dessert },
   ...props
 }) => {
-  const [productValue, setProductValue] = useState(1)
+  //   const [productValue, setProductValue] = useState(1)
+  const currentQuantity = cartItems.find((item) => item.name === dessert.name)?.quantity || 1
 
   const handleClick = (e) => {
     const newState = !active
@@ -24,11 +27,11 @@ const Button = ({
 
   const handleCounterClick = (e, type) => {
     e.stopPropagation()
-    if (type === 'decrement') {
-      setProductValue((prev) => Math.max(1, prev - 1))
-    } else {
-      setProductValue((prev) => prev + 1)
-    }
+
+    const newQuantity =
+      type === 'decrement' ? Math.max(1, currentQuantity - 1) : currentQuantity + 1
+
+    onUpdateQuantity?.(dessert.name, newQuantity)
   }
 
   return (
@@ -48,7 +51,7 @@ const Button = ({
             >
               <IconDecrement />
             </button>
-            <span className={style['button__calculate-counter']}>{productValue}</span>
+            <span className={style['button__calculate-counter']}>{currentQuantity}</span>
             <button
               type="button"
               className={`${style.button__increment} ${style.button__calculate}`}
