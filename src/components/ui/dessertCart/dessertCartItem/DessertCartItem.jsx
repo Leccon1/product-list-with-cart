@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/no-unresolved
-import deleteButtonSvg from '@icons/icon-remove-item.svg'
+import IconRemove from '../../icons/IconRemove'
 
 import style from './DessertCartItem.module.scss'
 
@@ -17,7 +16,7 @@ const DessertCartItem = ({ item }) => {
         </div>
       </div>
       <button type="button" className={style.cartItemDelete}>
-        <img src={deleteButtonSvg} alt="Delete Button" />
+        <IconRemove />
       </button>
     </li>
   )
