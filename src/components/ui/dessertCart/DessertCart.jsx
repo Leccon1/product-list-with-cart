@@ -1,6 +1,8 @@
 // eslint-disable-next-line import/no-unresolved
 import emptyCartIconSvg from '@images/illustration-empty-cart.svg'
 
+import IconCarbonNeutral from '../icons/IconCarbonNeutral'
+
 import style from './DessertCart.module.scss'
 import DessertCartItem from './dessertCartItem/DessertCartItem'
 
@@ -8,7 +10,6 @@ const DessertCart = ({ cartItems = [] }) => {
   const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0)
 
   return (
-    // TODO: Исправить стили контейнера, чтобы прайс был снизу, тайтл вверху, а список айтемов сделать как в тг в избранных, через grid и тд...
     <div
       className={style.dessertCart}
       style={cartItems.length === 0 ? {} : { justifyContent: 'space-between' }}
@@ -34,6 +35,10 @@ const DessertCart = ({ cartItems = [] }) => {
           </span>
         </div>
       )}
+      <div className={style.dessertCartDivider}>
+        <IconCarbonNeutral />
+        This is a <b>carbon-neutral</b> delivery
+      </div>
     </div>
   )
 }

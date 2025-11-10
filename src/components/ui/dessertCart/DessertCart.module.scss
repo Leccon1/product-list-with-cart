@@ -30,6 +30,25 @@
     flex-direction: column;
   }
 
+  .dessertCartDivider {
+    background-color: $color-rose-100;
+    border-radius: $border-radius-sm;
+    padding: rem(12) 0;
+
+    font-size: rem(14);
+    font-weight: $font-weight-semiBold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(4);
+
+    b {
+      color: $color-rose-900;
+      font-weight: inherit;
+    }
+  }
+
   .cartItems {
     flex: 1;
     overflow-y: auto;
