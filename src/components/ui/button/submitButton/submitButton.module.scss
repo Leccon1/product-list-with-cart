@@ -1,0 +1,14 @@
+@use '@styles/variables' as *;
+@use '@styles/helpers' as *;
+@use 'sass:color' as color;
+
+.submitButton {
+  background-color: $color-red;
+  color: $color-white;
+
+  transition: background-color $transition-fast;
+
+  @include hover {
+    background-color: color.adjust($color-red, $lightness: -10%);
+  }
+}
