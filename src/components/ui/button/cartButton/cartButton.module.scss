@@ -7,29 +7,20 @@
   left: 50%;
   transform: translate(-50%, 50%);
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   width: 65%;
-  height: rem(50);
 
   background-color: $color-white;
   color: $color-black;
   border: rem(1) solid $color-black;
   border-radius: $border-radius-lg;
 
-  font-size: fluid(14, 16, 768, 1920);
-  font-weight: $font-weight-semiBold;
+  transition:
+    color $transition-fast,
+    border-color $transition-fast;
 
-  cursor: pointer;
-  transition: all $transition-fast;
-
-  &:not(.button--active) {
-    @include hover {
-      color: $color-red;
-      border-color: $color-red;
-    }
+  @include hover {
+    color: $color-red;
+    border-color: $color-red;
   }
 
   @include mobile {
@@ -39,6 +30,11 @@
   &.button--active {
     background-color: $color-red;
     color: $color-white;
+
+    @include hover {
+      color: $color-white;
+      border-color: $color-red;
+    }
   }
 
   &__content {

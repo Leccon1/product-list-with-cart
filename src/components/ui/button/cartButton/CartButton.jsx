@@ -23,10 +23,7 @@ const CartButton = ({
   }
 
   return (
-    <div
-      className={`${style.button} ${style['button--cart']} ${active ? style['button--active'] : ''}`}
-      {...props}
-    >
+    <div className={`button ${style.button} ${active ? style['button--active'] : ''}`} {...props}>
       <div className={`${style.button__content} ${active ? style['button__active-content'] : ''}`}>
         {active ? (
           // Активное состояние - счетчик
