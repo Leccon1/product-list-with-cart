@@ -8,11 +8,11 @@ button,
   font-size: fluid(14, 16, 768, 1920);
   font-weight: $font-weight-semiBold;
 
+  border-radius: $border-radius-lg;
+
   display: flex;
   justify-content: center;
   align-items: center;
 
   cursor: pointer;
-
-  //   transition: background-color $transition-fast;
 }
