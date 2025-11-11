@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 import DessertCart from '../ui/dessertCart/DessertCart'
 
-import style from './DessertListPage.module.scss'
+import style from './dessertListPage.module.scss'
 
 const DessertListPage = () => {
   const [cartItems, setCartItems] = useState([])

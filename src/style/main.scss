@@ -5,7 +5,7 @@
 @use './base/normalized';
 @use './base/utilites';
 
-@use '../components/ui/dessertCard/DessertCard.module';
-@use '../components/ui/button/Button.module';
+@use '../components/ui/dessertCard/dessertCard.module';
+@use '../components/ui/button/cartButton/cartButton.module';
 
-@use '../components/pages/DessertListPage.module';
+@use '../components/pages/dessertListPage.module';
