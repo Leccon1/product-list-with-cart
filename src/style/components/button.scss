@@ -1,0 +1,18 @@
+@use '@styles/variables' as *;
+@use '@styles/helpers' as *;
+
+button,
+.button {
+  height: rem(50);
+
+  font-size: fluid(14, 16, 768, 1920);
+  font-weight: $font-weight-semiBold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  //   transition: background-color $transition-fast;
+}
