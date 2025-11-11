@@ -23,14 +23,19 @@ const CartButton = ({
   }
 
   return (
-    <div className={`button ${style.button} ${active ? style['button--active'] : ''}`} {...props}>
-      <div className={`${style.button__content} ${active ? style['button__active-content'] : ''}`}>
+    <div
+      className={`button ${style.cartButton} ${active ? style['button--active'] : ''}`}
+      {...props}
+    >
+      <div
+        className={`${style.cartButton__content} ${active ? style['button__active-content'] : ''}`}
+      >
         {active ? (
           // Активное состояние - счетчик
           <>
             <button
               type="button"
-              className={`${style.button__decrement} ${style.button__calculate}`}
+              className={`${style.cartButton__decrement} ${style.cartButton__calculate}`}
               onClick={(e) => handleCounterClick(e, 'decrement')}
             >
               <IconDecrement />
@@ -38,7 +43,7 @@ const CartButton = ({
             <span className={style['button__calculate-counter']}>{currentQuantity}</span>
             <button
               type="button"
-              className={`${style.button__increment} ${style.button__calculate}`}
+              className={`${style.cartButton__increment} ${style.cartButton__calculate}`}
               onClick={(e) => handleCounterClick(e, 'increment')}
             >
               <IconIncrement />

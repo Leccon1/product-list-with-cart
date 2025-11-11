@@ -1,7 +1,7 @@
 @use '@styles/variables' as *;
 @use '@styles/helpers' as *;
 
-.button {
+.cartButton {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -30,11 +30,7 @@
   &.button--active {
     background-color: $color-red;
     color: $color-white;
-
-    @include hover {
-      color: $color-white;
-      border-color: $color-red;
-    }
+    border-color: $color-red;
   }
 
   &__content {
