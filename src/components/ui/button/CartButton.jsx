@@ -1,7 +1,7 @@
 import IconDecrement from '../icons/IconDecrementQuantity'
 import IconIncrement from '../icons/IconIncrementQuantity'
 
-import style from './Button.module.scss'
+import style from './cartButton.module.scss'
 
 const CartButton = ({
   children,

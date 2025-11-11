@@ -1,7 +1,7 @@
-import Button from '../button/Button'
+import Button from '../button/cartButton/CartButton'
 import IconCart from '../icons/IconCart'
 
-import style from './DessertCard.module.scss'
+import style from './dessertCard.module.scss'
 
 const DessertCardComponent = ({
   product: dessert,

@@ -3,7 +3,7 @@ import emptyCartIconSvg from '@images/illustration-empty-cart.svg'
 
 import IconCarbonNeutral from '../icons/IconCarbonNeutral'
 
-import style from './DessertCart.module.scss'
+import style from './dessertCart.module.scss'
 import DessertCartItem from './dessertCartItem/DessertCartItem'
 
 const DessertCart = ({ cartItems = [] }) => {

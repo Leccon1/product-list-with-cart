@@ -1,6 +1,6 @@
 import IconRemove from '../../icons/IconRemove'
 
-import style from './DessertCartItem.module.scss'
+import style from './dessertCartItem.module.scss'
 
 const DessertCartItem = ({ item }) => {
   const itemTotal = item.price * item.quantity
