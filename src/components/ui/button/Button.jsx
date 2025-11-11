@@ -3,27 +3,15 @@ import IconIncrement from '../icons/IconIncrementQuantity'
 
 import style from './Button.module.scss'
 
-const Button = ({
+const CartButton = ({
   children,
-  variant = 'product-card',
-  activeContent,
   active = false,
-  showCounter = true,
-  onStateChange,
-  onUpdateQuantity = { onUpdateQuantity },
-  onUpdateTotalQuantity = { onUpdateTotalQuantity },
-  cartItems,
-  dessert = { dessert },
+  onUpdateQuantity,
+  cartItems = [],
+  dessert,
   ...props
 }) => {
-  //   const [productValue, setProductValue] = useState(1)
-  const currentQuantity = cartItems.find((item) => item.name === dessert.name)?.quantity || 1
-
-  const handleClick = (e) => {
-    const newState = !active
-    onStateChange?.(newState)
-    props.onClick?.(e)
-  }
+  const currentQuantity = cartItems.find((item) => item.name === dessert?.name)?.quantity || 1
 
   const handleCounterClick = (e, type) => {
     e.stopPropagation()
@@ -31,18 +19,17 @@ const Button = ({
     const newQuantity =
       type === 'decrement' ? Math.max(1, currentQuantity - 1) : currentQuantity + 1
 
-    onUpdateQuantity?.(dessert.name, newQuantity)
+    onUpdateQuantity?.(dessert?.name, newQuantity)
   }
 
   return (
     <div
-      className={`${style.button} ${style[`button--${variant}`]} ${active ? style['button--active'] : ''}`}
-      onClick={handleClick}
+      className={`${style.button} ${style['button--cart']} ${active ? style['button--active'] : ''}`}
       {...props}
     >
       <div className={`${style.button__content} ${active ? style['button__active-content'] : ''}`}>
-        {active && showCounter ? (
-          // Активное состояние со счетчиком
+        {active ? (
+          // Активное состояние - счетчик
           <>
             <button
               type="button"
@@ -60,11 +47,8 @@ const Button = ({
               <IconIncrement />
             </button>
           </>
-        ) : active ? (
-          // Активное состояние с кастомным контентом (КастомизИрованный)
-          activeContent || children
         ) : (
-          // не активное состояние
+          // Неактивное состояние - обычная кнопка
           children
         )}
       </div>
@@ -72,4 +56,4 @@ const Button = ({
   )
 }
 
-export default Button
+export default CartButton
