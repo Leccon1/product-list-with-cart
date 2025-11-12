@@ -16,4 +16,8 @@ body {
 
   font-size: $font-size-base;
   font-family: $font-family-base;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
