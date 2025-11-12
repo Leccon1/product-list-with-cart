@@ -6,6 +6,8 @@
   background-color: $color-red;
   color: $color-white;
 
+  flex-shrink: 0;
+
   transition: background-color $transition-fast;
 
   @include hover {
