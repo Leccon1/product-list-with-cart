@@ -1,4 +1,5 @@
-import IconRemove from '../../icons/IconRemove'
+// eslint-disable-next-line import/no-unresolved
+import IconRemove from '@iconsComponent/IconRemove'
 
 import style from './dessertCartItem.module.scss'
 

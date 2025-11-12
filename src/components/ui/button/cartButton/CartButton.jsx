@@ -1,5 +1,6 @@
-import IconDecrement from '../../icons/IconDecrementQuantity'
-import IconIncrement from '../../icons/IconIncrementQuantity'
+/* eslint-disable import/no-unresolved */
+import IconDecrement from '@iconsComponent/IconDecrementQuantity'
+import IconIncrement from '@iconsComponent/IconIncrementQuantity'
 
 import style from './cartButton.module.scss'
 
