@@ -7,7 +7,7 @@ import IconCarbonNeutral from '../icons/IconCarbonNeutral'
 import style from './dessertCart.module.scss'
 import DessertCartItem from './dessertCartItem/DessertCartItem'
 
-const DessertCart = ({ cartItems = [] }) => {
+const DessertCart = ({ cartItems = [], onRemoveFromCart }) => {
   const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0)
 
   return (
@@ -25,7 +25,7 @@ const DessertCart = ({ cartItems = [] }) => {
       ) : (
         <ul className={style.cartItems}>
           {cartItems.map((item) => (
-            <DessertCartItem key={item.name} item={item} />
+            <DessertCartItem key={item.name} item={item} onRemoveFromCart={onRemoveFromCart} />
           ))}
         </ul>
       )}

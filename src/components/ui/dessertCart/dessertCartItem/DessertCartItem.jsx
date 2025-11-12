@@ -2,7 +2,7 @@ import IconRemove from '../../icons/IconRemove'
 
 import style from './dessertCartItem.module.scss'
 
-const DessertCartItem = ({ item }) => {
+const DessertCartItem = ({ item, onRemoveFromCart }) => {
   const itemTotal = item.price * item.quantity
 
   return (
@@ -15,7 +15,11 @@ const DessertCartItem = ({ item }) => {
           <span className={style.cartItemTotalPrice}>${itemTotal.toFixed(2)}</span>
         </div>
       </div>
-      <button type="button" className={style.cartItemDelete}>
+      <button
+        type="button"
+        className={style.cartItemDelete}
+        onClick={() => onRemoveFromCart(item.name)}
+      >
         <IconRemove />
       </button>
     </li>

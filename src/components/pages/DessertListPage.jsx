@@ -11,6 +11,14 @@ const DessertListPage = () => {
   const [cartItems, setCartItems] = useState([])
   const [totalPtice, setTotalPrice] = useState(0)
 
+  const removeFromCart = (dessertName) => {
+    setCartItems((prev) => {
+      const newItems = prev.filter((item) => item.name !== dessertName)
+      setTotalPrice(calculateTotalPrice(newItems))
+      return newItems
+    })
+  }
+
   const addToCart = (dessert) => {
     setCartItems((prev) => {
       const existingItem = prev.find((item) => item.name === dessert.name)
@@ -18,11 +26,11 @@ const DessertListPage = () => {
       if (existingItem) {
         const newItems = prev.filter((item) => item.name !== dessert.name)
         setTotalPrice(calculateTotalPrice(newItems))
-        return prev.filter((item) => item.name !== dessert.name)
+        return newItems
       } else {
         const newItems = [...prev, { ...dessert, quantity: 1 }]
         setTotalPrice(calculateTotalPrice(newItems))
-        return [...prev, { ...dessert, quantity: 1 }]
+        return newItems
       }
     })
   }
@@ -60,7 +68,7 @@ const DessertListPage = () => {
           ))}
         </div>
       </div>
-      <DessertCart cartItems={cartItems} />
+      <DessertCart cartItems={cartItems} onRemoveFromCart={removeFromCart} />
     </div>
   )
 }
