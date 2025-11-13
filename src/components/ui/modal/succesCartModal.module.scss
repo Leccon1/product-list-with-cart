@@ -1,0 +1,90 @@
+@use '@styles/variables' as *;
+@use '@styles/helpers' as *;
+@use 'sass:color' as color;
+.overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .modalOverlay {
+    min-width: rem(590);
+    max-width: rem(650);
+    min-height: rem(650);
+    max-height: rem(700);
+
+    position: absolute;
+    inset: 0;
+    place-self: center;
+
+    background-color: $color-white;
+    padding: rem(32);
+    border-radius: $border-radius-sm;
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: rem(24);
+
+    .modalText {
+      .modalTitle {
+        flex-shrink: 0;
+
+        font-size: rem(42);
+      }
+    }
+
+    .closeButton {
+      flex-shrink: 0;
+      background-color: $color-red;
+      color: $color-white;
+      width: 100%;
+
+      transition: background-color $transition-fast;
+
+      @include hover {
+        background-color: color.adjust($color-red, $lightness: -10%);
+      }
+    }
+    .orderSummary {
+      background-color: $color-rose-50;
+      width: 100%;
+      padding: rem(12);
+      border-radius: $border-radius-sm;
+
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 0;
+
+      .orderSummaryList {
+        flex: 1;
+        overflow-y: auto;
+
+        padding: 0 rem(12);
+        border-radius: $border-radius-sm;
+
+        @include inset-shadow;
+        @include scrollbar;
+      }
+
+      .orderSummaryTotal {
+        flex-shrink: 0;
+        padding: rem(24) rem(18);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .orderSummaryTotalPrice {
+          font-size: rem(24);
+          font-weight: $font-weight-bold;
+        }
+      }
+    }
+  }
+}
