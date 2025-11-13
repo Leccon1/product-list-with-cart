@@ -21,7 +21,6 @@ const DessertListPage = () => {
     }
 
     setShowSuccesModal(true)
-    console.log(showSuccesModal, 'Submit', cartItems)
   }
 
   const handleClosedModal = () => {
@@ -69,6 +68,7 @@ const DessertListPage = () => {
   const calculateTotalPrice = (items) => {
     return items.reduce((total, item) => total + item.price * item.quantity, 0)
   }
+
   return (
     <div className={style.dessertsListPage}>
       <div className={style.dessertMain}>
@@ -93,7 +93,7 @@ const DessertListPage = () => {
         onSubmit={handleCartSubmit}
       />
 
-      <SuccessModal isOpen={showSuccesModal} onClose={handleClosedModal} orderDetails={cartItems} />
+      <SuccessModal isOpen={showSuccesModal} onClose={handleClosedModal} cartItems={cartItems} />
     </div>
   )
 }
