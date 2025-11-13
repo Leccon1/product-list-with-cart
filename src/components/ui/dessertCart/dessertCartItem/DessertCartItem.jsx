@@ -7,7 +7,7 @@ const DessertCartItem = ({ item, onRemoveFromCart, variant = 'default' }) => {
   const itemTotal = item.price * item.quantity
 
   return (
-    <li className={style.cartItem}>
+    <li className={style.cartItem} data-variant={variant}>
       {variant === 'modal' && <img src={item.image?.thumbnail} alt={item.image.thumbnail} />}
       <div className={style.cartItemContent}>
         <p className={style.cartItemName}>{item.name}</p>
