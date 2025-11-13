@@ -17,7 +17,6 @@ const DessertListPage = () => {
   const handleCartSubmit = (e) => {
     e.preventDefault()
     if (cartItems.length === 0) {
-      alert('No Submit')
       return
     }
 
