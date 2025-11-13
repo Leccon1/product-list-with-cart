@@ -27,12 +27,13 @@
 
   &[data-variant='modal'] {
     position: relative;
+    color: $color-rose-500;
+    font-weight: $font-weight-semiBold;
+    padding: rem(12) 0;
+
     display: flex;
     justify-content: flex-start;
     gap: rem(18);
-
-    padding: rem(12) 0;
-
     & img {
       width: rem(48);
       height: rem(48);
@@ -47,7 +48,6 @@
 
       color: $color-rose-900;
       font-size: rem(16);
-      font-weight: $font-weight-semiBold;
     }
 
     button {
