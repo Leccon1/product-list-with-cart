@@ -27,3 +27,7 @@
   scrollbar-width: thin;
   scrollbar-color: hsl(14, 25%, 72%) hsl(20, 50%, 98%);
 }
+
+@mixin inset-shadow {
+  box-shadow: inset 0 0 8px 2px rgba(0, 0, 0, 0.03);
+}

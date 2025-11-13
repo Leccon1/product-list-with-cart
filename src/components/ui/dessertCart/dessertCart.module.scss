@@ -54,27 +54,9 @@
     overflow-y: auto;
 
     padding: rem(8);
-    box-shadow: inset 0 0 8px 2px rgba(0, 0, 0, 0.03);
 
-    &::-webkit-scrollbar {
-      width: 4px;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: $color-rose-50;
-      border-radius: 2px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: $color-rose-300;
-      border-radius: 2px;
-
-      &:hover {
-        background: $color-rose-400;
-      }
-    }
-    scrollbar-width: thin;
-    scrollbar-color: $color-rose-300 $color-rose-50;
+    @include inset-shadow;
+    @include scrollbar;
   }
 
   .dessertCartTotal {
