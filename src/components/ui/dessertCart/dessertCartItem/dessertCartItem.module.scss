@@ -25,6 +25,36 @@
     padding-bottom: 0;
   }
 
+  &[data-variant='modal'] {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    gap: rem(18);
+
+    padding: rem(12) 0;
+
+    & img {
+      width: rem(48);
+      height: rem(48);
+      border-radius: $border-radius-sm;
+    }
+
+    .cartItemTotalPrice {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      color: $color-rose-900;
+      font-size: rem(16);
+      font-weight: $font-weight-semiBold;
+    }
+
+    button {
+      display: none;
+    }
+  }
+
   .cartItemDelete {
     width: rem(18);
     height: rem(18);
