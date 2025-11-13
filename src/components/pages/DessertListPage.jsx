@@ -4,12 +4,32 @@ import dessertsData from '@data/dessert'
 import { useState } from 'react'
 
 import DessertCart from '../ui/dessertCart/DessertCart'
+import SuccessModal from '../ui/modal/SuccesCartModal'
 
 import style from './dessertListPage.module.scss'
 
 const DessertListPage = () => {
   const [cartItems, setCartItems] = useState([])
   const [totalPtice, setTotalPrice] = useState(0)
+
+  const [showSuccesModal, setShowSuccesModal] = useState(false)
+
+  const handleCartSubmit = (e) => {
+    e.preventDefault()
+    if (cartItems.length === 0) {
+      alert('No Submit')
+      return
+    }
+
+    setShowSuccesModal(true)
+    console.log(showSuccesModal, 'Submit', cartItems)
+  }
+
+  const handleClosedModal = () => {
+    setShowSuccesModal(false)
+    setCartItems([])
+    setTotalPrice(0)
+  }
 
   const removeFromCart = (dessertName) => {
     setCartItems((prev) => {
@@ -68,7 +88,13 @@ const DessertListPage = () => {
           ))}
         </div>
       </div>
-      <DessertCart cartItems={cartItems} onRemoveFromCart={removeFromCart} />
+      <DessertCart
+        cartItems={cartItems}
+        onRemoveFromCart={removeFromCart}
+        onSubmit={handleCartSubmit}
+      />
+
+      <SuccessModal isOpen={showSuccesModal} onClose={handleClosedModal} orderDetails={cartItems} />
     </div>
   )
 }

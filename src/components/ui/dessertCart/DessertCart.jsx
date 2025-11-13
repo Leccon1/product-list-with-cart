@@ -1,18 +1,19 @@
-// eslint-disable-next-line import/no-unresolved
+/* eslint-disable import/no-unresolved */
+import IconCarbonNeutral from '@iconsComponent/IconCarbonNeutral'
 import emptyCartIconSvg from '@images/illustration-empty-cart.svg'
 
 import SubmitButton from '../button/submitButton/SubmitButton'
-import IconCarbonNeutral from '../icons/IconCarbonNeutral'
 
 import style from './dessertCart.module.scss'
 import DessertCartItem from './dessertCartItem/DessertCartItem'
 
-const DessertCart = ({ cartItems = [], onRemoveFromCart }) => {
+const DessertCart = ({ cartItems = [], onRemoveFromCart, onSubmit }) => {
   const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0)
 
   return (
     <form
       action={'#'}
+      onSubmit={onSubmit}
       className={style.dessertCart}
       style={cartItems.length === 0 ? {} : { justifyContent: 'space-between' }}
     >
