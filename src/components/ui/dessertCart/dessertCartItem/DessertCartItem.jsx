@@ -3,11 +3,12 @@ import IconRemove from '@iconsComponent/IconRemove'
 
 import style from './dessertCartItem.module.scss'
 
-const DessertCartItem = ({ item, onRemoveFromCart }) => {
+const DessertCartItem = ({ item, onRemoveFromCart, variant = 'default' }) => {
   const itemTotal = item.price * item.quantity
 
   return (
     <li className={style.cartItem}>
+      {variant === 'modal' && <img src={item.image?.thumbnail} alt={item.image.thumbnail} />}
       <div className={style.cartItemContent}>
         <p className={style.cartItemName}>{item.name}</p>
         <div className={style.cartItemInfo}>
