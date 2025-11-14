@@ -3,7 +3,4 @@ dist
 build
 *.min.js
 *.min.css
-*.scss
-*.sass
-**/*.module.scss
 package-lock.json
