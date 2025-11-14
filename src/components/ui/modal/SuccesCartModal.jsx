@@ -1,12 +1,20 @@
 /* eslint-disable import/no-unresolved */
 import dessertData from '@data/dessert'
 import IconOrderConfirmed from '@iconsComponent/IconOrderConfirmed'
+import { useEffect } from 'react'
 
 import DessertCartItem from '../dessertCart/dessertCartItem/DessertCartItem'
 
 import style from './succesCartModal.module.scss'
 
 const SuccessCartModal = ({ isOpen, onClose, cartItems = [] }) => {
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto'
+    return () => {
+      document.body.style.overflow = 'auto'
+    }
+  }, [isOpen])
+
   const itemsWithImages = cartItems.map((cartItem) => {
     const fullItem = dessertData.find((d) => d.name === cartItem.name)
     return {
