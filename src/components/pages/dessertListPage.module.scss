@@ -28,6 +28,9 @@
     grid-template-columns: repeat(3, minmax(250px, 250px));
     gap: $spacing-gap-xl rem(24);
 
+    @include tablet {
+      grid-template-columns: repeat(2, minmax(250px, 250px));
+    }
     @include mobile {
       grid-template-columns: repeat(1, minmax(250px, 250px));
     }
