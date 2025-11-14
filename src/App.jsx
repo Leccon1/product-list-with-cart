@@ -1,8 +1,11 @@
+/* eslint-disable import/no-unresolved */
+
+import DessertListPage from '@components/pages/DessertListPage'
+
 const App = () => {
   return (
     <div className="app">
-      <h1>Мое React приложение</h1>
-      {/* Сюда перенесете вашу существующую логику */}
+      <DessertListPage />
     </div>
   )
 }
