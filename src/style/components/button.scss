@@ -3,7 +3,7 @@
 
 button,
 .button {
-  height: rem(50);
+  height: fluid(35, 50);
 
   font-size: fluid(14, 16, 768, 1920);
   font-weight: $font-weight-semiBold;
