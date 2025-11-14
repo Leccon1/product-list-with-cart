@@ -5,7 +5,7 @@ import checker from 'vite-plugin-checker'
 import svgr from 'vite-plugin-svgr'
 
 export default defineConfig({
-  base: 'My-practices-in-the-frontend-mentor/demo/junior/product-list-with-cart-main',
+  base: 'My-practices-in-the-frontend-mentor/demo/junior/product-list-with-cart-main-demo',
 
   plugins: [
     react({
