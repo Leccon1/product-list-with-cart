@@ -26,8 +26,8 @@ const DessertCardComponent = ({
         className={`${style.dessertCardMedia} ${isButtonActive ? style.dessertCardMediaActive : ''}`}
       >
         <picture>
-          <source srcSet={dessert.image.mobile} alt={dessert.name} media="(max-width: 767px)" />
-          <source srcSet={dessert.image.tablet} alt={dessert.name} media="(max-width: 1023px)" />
+          <source srcSet={dessert.image.mobile} alt={dessert.name} media="(max-width: 867px)" />
+          <source srcSet={dessert.image.tablet} alt={dessert.name} media="(max-width: 1250px)" />
           <img src={dessert.image.desktop} alt={dessert.name} />
         </picture>
         <Button
